@@ -14,17 +14,17 @@ public class CreateWireMockStub {
     JsonNode responseJson = loadJsonFile.loadJson(responseFile);
 
     // Extract request body from JSON
-    String requestBody = requestJson.toString();  // Customize this if needed
-    String responseBody = responseJson.toString();  // Customize this if needed
+    String requestBody = requestJson.toString();  
+    String responseBody = responseJson.toString(); 
 
     // Create the WireMock stub
     StubMapping stubMapping = WireMock.stubFor(
-            WireMock.post(WireMock.urlEqualTo(requestJson.get("url").asText()))  // Match the URL from request JSON
-                    .withRequestBody(WireMock.equalToJson(requestBody))  // Match the body
+            WireMock.post(WireMock.urlEqualTo(requestJson.get("url").asText()))  
+                    .withRequestBody(WireMock.equalToJson(requestBody)) 
                     .willReturn(
                             WireMock.aResponse()
-                                    .withStatus(responseJson.get("status").asInt())  // Response status from JSON
-                                    .withBody(responseBody)  // Response body from JSON
+                                    .withStatus(responseJson.get("status").asInt())  
+                                    .withBody(responseBody) 
                     )
     );
 
@@ -36,4 +36,5 @@ public class CreateWireMockStub {
         System.out.println("Stub created: " + stubMapping);
 }
 }
+
 
