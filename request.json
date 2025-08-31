@@ -1,0 +1,20 @@
+{
+  "request": {
+    "urlPathPattern": "",
+    "method": "POST",
+    "headers": {
+      "Content-Type": {
+        "equalTo": "application/json"
+      }
+    },
+    "bodyPatterns": [
+      {
+        "matches":""
+      }
+    ]
+  },
+  "response": {
+    "status": "200",
+    "bodyFileName": ""
+  }
+}
